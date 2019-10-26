@@ -1,11 +1,13 @@
 function validarNombre(nombre) {
-    if (nombre.lenght == 0) {
-        return "Este campo no debe quedar vacio."
+    if (nombre.lenght === 0) {
+        return "Este campo no debe quedar vacio.";
+    } 
+    else if (nombre.lenght >= 50) {
+        return "Este campo debe tener menos caracteres.";
+    } 
+    else {
+        return "";
     }
-    if (nombre.lenght >= 50) {
-        return "Este campo debe tener menos caracteres."
-    }
-    return "";
 }
 
 const formulario = document.querySelector("#carta-a-santa");
