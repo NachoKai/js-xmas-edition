@@ -63,10 +63,9 @@ Para validar nuestro formulario, vamos a tener  que hacer lo siguiente:
     **
    `const name = document.formulario.nombre.value;`
 
-   TODO: Ahora crear lo mismo para las variables:
-   - ciudad
-   - comportamiento
-   - descripcionRegalo
+   TODO: now it is your turn to get other values out. Create variables called
+   `city`, `behavior`, `description` and store in them appropriate values 
+   from the form.
    
    
 2.Validar que el nombre sea válido y escribir una prueba
