@@ -13,6 +13,12 @@ function pruebaValidarCiudad() {
     );
 }
 
+function pruebaValidarComportamiento() {
+    console.assert(validarComportamiento("") === "Este campo no debe quedar vacio.",
+        "Validar comportamiento no validó que la ciudad sea mayor a 1 caracter.",
+    );
+}
+
 function pruebaValidarDescripcionRegalo() {
     console.assert(validarDescripcionRegalo("") === "Este campo no debe quedar vacio.",
         "Validar descripcion regalo no validó que la descripcion sea mayor a 1 caracter.",
@@ -24,4 +30,5 @@ function pruebaValidarDescripcionRegalo() {
 
 pruebaValidarNombre();
 pruebaValidarCiudad();
+pruebaValidarComportamiento();
 pruebaValidarDescripcionRegalo();

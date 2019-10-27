@@ -22,6 +22,14 @@ function validarCiudad(ciudad) {
     }
 }
 
+function validarComportamiento(comportamiento) {
+    if (comportamiento.length === 0) {
+        return "Este campo no debe quedar vacio.";
+    } else {
+        return "";
+    }
+}
+
 function validarDescripcionRegalo(descripcionRegalo) {
     if (descripcionRegalo.length === 0) {
         return "Este campo no debe quedar vacio.";
