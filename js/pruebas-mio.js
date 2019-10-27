@@ -5,6 +5,9 @@ function pruebaValidarNombre() {
     console.assert(validarNombre("12345678910111213141516171819202122232425262728293031323334353637383940") === "Este campo debe tener menos caracteres.",
         "Validar nombre no validó que el nombre sea menor a 50 caracteres.",
     );
+    console.assert(validarNombre("/^[A-z]+$/") === "Este campo tiene caracteres inválidos.",
+        "Validar nombre no validó que el nombre no tenga caracteres invalidos.",
+    );
 }
 
 function pruebaValidarCiudad() {
