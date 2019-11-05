@@ -1,47 +1,39 @@
-const formulario = document.querySelector("#carta-a-santa");
-const nombre = formulario.nombre.value;
-const ciudad = formulario.ciudad.value;
-const comportamiento = formulario.comportamiento.value;
-const descripcionRegalo = formulario['descripcion-regalo'].value;
-const contieneSoloLetras = /^[A-z]+$/;
-const contieneSoloLetrasONumeros = /^[A-z0-9]+$/;
-
 function validarNombre(nombre) {
-    if (nombre.length === 0) {
-        return "Este campo no debe quedar vacio.";
+    if (nombre === '') {
+        return 'El campo nombre no debe quedar vacio.';
     } else if (nombre.length >= 50) {
-        return "Este campo debe tener menos caracteres.";
-    } else if (!contieneSoloLetras.test(nombre)) {
-        return "Este campo tiene caracteres inválidos.";
+        return 'El campo nombre debe tener menos caracteres.';
+    } else if (!/^[A-z ]+$/i.test(nombre)) {
+        return 'El campo nombre tiene caracteres inválidos.';
     } else {
-        return "";
+        return '';
     }
 }
 
 function validarCiudad(ciudad) {
-    if (ciudad.length === 0) {
-        return "Este campo no debe quedar vacio.";
+    if (ciudad === '') {
+        return 'El campo ciudad no debe quedar vacio.';
     } else {
-        return "";
+        return '';
     }
 }
 
 function validarComportamiento(comportamiento) {
-    if (comportamiento.length === 0) {
-        return "Este campo no debe quedar vacio.";
+    if (comportamiento === '') {
+        return 'El campo comportamiento no debe quedar vacio.';
     } else {
-        return "";
+        return '';
     }
 }
 
 function validarDescripcionRegalo(descripcionRegalo) {
-    if (descripcionRegalo.length === 0) {
-        return "Este campo no debe quedar vacio.";
+    if (descripcionRegalo === '') {
+        return 'El campo descripción no debe quedar vacio.';
     } else if (descripcionRegalo.length >= 100) {
-        return "Este campo debe tener menos caracteres.";
-    } else if (!contieneSoloLetrasONumeros.test(descripcionRegalo)) {
-        return "Este campo tiene caracteres inválidos.";
+        return 'El campo descripción debe tener menos caracteres.';
+    } else if (!/^[0-9a-z !\?,\.-]+$/i.test(descripcionRegalo)) {
+        return 'El campo descripción tiene caracteres inválidos.';
     } else {
-        return "";
+        return '';
     }
 }
