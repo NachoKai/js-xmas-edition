@@ -46,7 +46,7 @@ function pruebaValidarDescripcionRegalo() {
     console.assert(validarDescripcionRegalo('12345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910') === 'El campo descripción debe tener menos caracteres.',
         'Validar descripción no validó que la descripción sea menor a 50 caracteres.',
     );
-    console.assert(validarDescripcionRegalo('/^[0-9a-z !\?,\.-]+$/i') === 'El campo descripción tiene caracteres inválidos.',
+    console.assert(validarDescripcionRegalo('/^[0-9a-z ¡¿!\?,\.-]+$/i') === 'El campo descripción tiene caracteres inválidos.',
     'Validar descripcion no validó que la descripcion no tenga caracteres invalidos.',
 );
     console.assert(validarDescripcionRegalo('Lorem ipsum dolor sit amet consectetur adipisicing elit') === '',
