@@ -54,28 +54,33 @@ function validarFormulario(event) {
         'descripcion-regalo': errorDescripcionRegalo
     }
 
-    manejarErrores(errores)
-    event.preventDefault()
+    const esExito = (manejarErrores(errores) === 0)
+
+    if (esExito) {
+        $form.className = 'oculto'
+        document.querySelector('#exito').className = '';
+    }
+
+    event.preventDefault();
 }
 
 function manejarErrores(errores) {
     const keys = Object.keys(errores);
     const $errores = document.querySelector('#errores');
+    let cantidadErrores = 0;
 
     keys.forEach(function (key) {
         const error = errores[key];
 
         if (error) {
+            cantidadErrores++;
             $form[key].className = 'error'
             const $error = document.createElement('li');
             $error.innerText = error;
             $errores.appendChild($error)
-        } else {
-            $form[key].className = ''
-            $error.innerText = '';
-            $errores.removeChild($error)
         }
     });
+    return cantidadErrores;
 }
 
 const $form = document.querySelector('#carta-a-santa')
