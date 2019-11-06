@@ -47,11 +47,11 @@ function validarFormulario(event) {
     const errorNombre = validarNombre(nombre);
     const errorCiudad = validarCiudad(ciudad);
     const errorDescripcionRegalo = validarDescripcionRegalo(descripcionRegalo);
-    
+
     const errores = {
         nombre: errorNombre,
         ciudad: errorCiudad,
-        descripcionRegalo: errorDescripcionRegalo
+        'descripcion-regalo': errorDescripcionRegalo
     }
 
     manejarErrores(errores)
@@ -59,27 +59,15 @@ function validarFormulario(event) {
 }
 
 function manejarErrores(errores) {
-    errorNombre = errores.nombre
-    errorCiudad = errores.ciudad
-    errorDescripcionRegalo = errores.descripcionRegalo
+    const keys = Object.keys(errores);
 
-    if (errorNombre) {
-        $form.nombre.className = "error"
-    } else {
-        $form.nombre.className = ""
-    }
+    keys.forEach(function (key) {
+        const error = errores[key];
 
-    if (errorCiudad) {
-        $form.ciudad.className = "error"
-    } else {
-        $form.ciudad.className = ""
-    }
-
-    if (errores.descripcionRegalo) {
-        $form["descripcion-regalo"].className = "error"
-    } else {
-        $form["descripcion-regalo"].className = ""
-    }
+        if (error) {
+            $form[key].className = "error"
+        }
+    });
 }
 
 const $form = document.querySelector("#carta-a-santa")
