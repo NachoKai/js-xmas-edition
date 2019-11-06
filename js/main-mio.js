@@ -65,6 +65,13 @@ function validarFormulario(event) {
     event.preventDefault();
 }
 
+function redireccionar() {
+    const delay = 5000
+    setTimeout(function () {
+        window.location.href = "wishlist.html";
+    }, delay);
+}
+
 function manejarErrores(errores) {
     const keys = Object.keys(errores);
     const $errores = document.querySelector('#errores');
@@ -81,15 +88,7 @@ function manejarErrores(errores) {
             $errores.appendChild($error)
         }
     });
-    return cantidadErrores;
 }
 
 const $form = document.querySelector('#carta-a-santa')
 $form.onsubmit = validarFormulario
-
-function redireccionar() {
-    const delay = 5000
-    setTimeout(function () {
-        window.location.href = "wishlist.html";
-    }, delay);
-}
